@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#4a2818">
+<title>💩</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+:root{--cream:#fff1d5;--tan:#d69a5b;--brown:#542d1b;--dark:#24130e;--gold:#ffd477}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font-family:Nunito,sans-serif;color:var(--cream);background:radial-gradient(circle at 50% 25%,#a65c2d 0,#63351f 38%,#28160f 78%);overflow-x:hidden}
+body:before{content:"💩  ✦  💩  ✦  💩";position:fixed;inset:0;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:70px;font-size:38px;opacity:.055;transform:rotate(-18deg);pointer-events:none}
+.wrap{width:min(1080px,calc(100% - 36px));margin:auto;min-height:100vh;display:grid;place-items:center}
+main{width:100%;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:7%;padding:55px 0}
+.photoarea{position:relative;max-width:430px;justify-self:end;width:100%}
+.photoarea:before{content:"💩";position:absolute;font-size:76px;top:-40px;right:-28px;transform:rotate(15deg);filter:drop-shadow(0 8px 5px #160b0877)}
+.photoarea:after{content:"✨";position:absolute;font-size:42px;bottom:-22px;left:-28px}
+.photo-frame{padding:13px;border-radius:34px;background:linear-gradient(145deg,#f6c16c,#8d4b27);box-shadow:0 25px 70px #160b08aa;transform:rotate(2deg)}
+.photo{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:23px;background:#3a2116}
+.sticker{position:absolute;left:-32px;top:55%;background:#ffe2a2;color:#512a18;border:3px dashed #b87838;border-radius:50%;width:100px;height:100px;display:grid;place-items:center;text-align:center;font-weight:900;font-size:42px;transform:rotate(-13deg);box-shadow:0 8px 20px #160b0877}
+@media(max-width:720px){main{grid-template-columns:1fr;gap:35px;padding:42px 0}.photoarea{justify-self:center;width:min(88%,390px)}.sticker{left:-22px;width:82px;height:82px;font-size:34px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<main>
+<section class="photoarea">
+<div class="photo-frame">
+<img class="photo" src="rich.png" alt="" onerror="this.style.objectFit='contain'">
+</div>
+<div class="sticker">💩</div>
+</section>
+</main>
+<audio id="audio" autoplay loop preload="auto">
+<source src="audio_2026-11-14_04-35-33.ogg" type="audio/ogg">
+</audio>
+</div>
+<script>
+const audio = document.getElementById('audio');
+audio.volume = 1;
+const startAudio = () => audio.play().catch(() => {
+  // Браузер может блокировать звук до первого действия пользователя.
+});
+window.addEventListener('load', startAudio);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden && audio.paused) startAudio();
+});
+</script>
+</body>
+</html>
